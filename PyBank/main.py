@@ -38,9 +38,18 @@ with open(bank_csv) as csv_file:
 change = [p_l_column[i] - p_l_column[i-1] for i in range(1, len(p_l_column))]
 average = round((sum(change) / len(change)), 2)
 
-# old biggest and smallest changes before I realized I couldn't get date with this methos
+# old biggest and smallest changes before I realized I couldn't get date with this method
 # increase = max(change)
 # decrease = min(change)
+
+#print results to terminal
+print(f"""Financial Analysis
+----------------------------
+Total Months: {total_months}
+Total: ${profits_losses}
+Average Change: ${average}
+Greatest Increase in Profits: {increase_date} (${biggest_increase})
+Greatest Decrease in Profits: {decrease_date} (${biggest_decrease})""")
 
 # Exporting analysis results to a txt file
 Analysis = f"""Financial Analysis
